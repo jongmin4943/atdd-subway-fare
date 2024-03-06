@@ -16,12 +16,12 @@ public class AgeDiscountHandler {
         return new AgeDiscountHandler(ageRange, fareDiscountInfo);
     }
 
-    public AgeDiscountHandler next(final AgeDiscountHandler nextHandler) {
+    public AgeDiscountHandler next(final AgeRange ageRange, final FareDiscountInfo fareDiscountInfo) {
         if (Objects.isNull(this.nextHandler)) {
-            this.nextHandler = nextHandler;
+            this.nextHandler = new AgeDiscountHandler(ageRange, fareDiscountInfo);
             return this;
         }
-        this.nextHandler.next(nextHandler);
+        this.nextHandler.next(ageRange, fareDiscountInfo);
         return this;
     }
 

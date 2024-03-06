@@ -19,7 +19,7 @@ class AgeDiscountHandlerTest {
     void ageDiscountTest(final int age, final long expectedDiscountFare) {
         final AgeDiscountHandler ageDiscountHandler =
                 AgeDiscountHandler.of(AgeRange.of(6, 13), FareDiscountInfo.of(350, 0.5))
-                        .next(AgeDiscountHandler.of(AgeRange.of(13, 19), FareDiscountInfo.of(350, 0.2)));
+                        .next(AgeRange.of(13, 19), FareDiscountInfo.of(350, 0.2));
         final long baseFare = 1350L;
 
         final long discounted = ageDiscountHandler.discount(baseFare, age);

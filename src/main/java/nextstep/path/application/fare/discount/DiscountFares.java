@@ -11,7 +11,7 @@ public class DiscountFares {
     public DiscountFares() {
         this.ageDiscountHandler =
                 AgeDiscountHandler.of(AgeRange.of(6, 13), FareDiscountInfo.of(350, 0.5))
-                        .next(AgeDiscountHandler.of(AgeRange.of(13, 19), FareDiscountInfo.of(350, 0.2)));
+                        .next(AgeRange.of(13, 19), FareDiscountInfo.of(350, 0.2));
     }
 
 
